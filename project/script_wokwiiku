@@ -1,0 +1,99 @@
+import network
+import time
+from machine import Pin
+from utime import sleep
+import dht
+import ujson
+from umqtt.simple import MQTTClient
+
+# MQTT Server Parameters
+MQTT_CLIENT_ID = "ESP32_Sensor_publish"
+MQTT_BROKER    = "broker.emqx.io"
+MQTT_USER      = ""
+MQTT_PASSWORD  = ""
+MQTT_TOPIC_PUB = "/UNI405/405_found/mohammad/sensorData"
+MQTT_TOPIC_SUB = "/UNI405/405_found/mohammad/aktuasiLED"
+
+# Inisialisasi sensor DHT22
+sensor1 = dht.DHT22(Pin(15))
+sensor2 = dht.DHT22(Pin(2))
+
+# Inisialisasi LED pada GPIO 12
+led = Pin(12, Pin.OUT)
+
+# Fungsi Callback MQTT (menangani pesan yang diterima)
+def mqtt_callback(topic, msg):
+    print(f"Pesan diterima dari {topic}: {msg}")
+
+    try:
+        # Parsing JSON
+        msg_dict = ujson.loads(msg.decode())
+        command = msg_dict.get("msg", "").strip().lower()
+
+        if command == "on":
+            led.on()
+            response = {"status": "LED berhasil menyala"}
+        elif command == "off":
+            led.off()
+            response = {"status": "LED berhasil mati"}
+        else:
+            response = {"status": ".............."}
+
+        print(response["status"])
+
+        # Publish status LED ke MQTT dalam format JSON
+        client.publish(MQTT_TOPIC_SUB, ujson.dumps(response))
+
+    except ValueError:
+        print("Error: Format pesan bukan JSON valid")
+    except Exception as e:
+        print(f"Error dalam pemrosesan MQTT: {e}")
+
+# Koneksi ke WiFi
+print("Connecting to WiFi", end="")
+sta_if = network.WLAN(network.STA_IF)
+sta_if.active(True)
+sta_if.connect('Wokwi-GUEST', '')
+while not sta_if.isconnected():
+    print(".", end="")
+    time.sleep(0.1)
+print(" Connected!")
+
+# Koneksi ke MQTT Server
+print("Connecting to MQTT server... ", end="")
+client = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER, user=MQTT_USER, password=MQTT_PASSWORD)
+client.set_callback(mqtt_callback)
+client.connect()
+client.subscribe(MQTT_TOPIC_SUB)
+print("Connected & Subscribed!")
+
+# Loop utama
+prev_weather = ""
+while True:
+    print("Measuring weather conditions... ", end="")
+
+    # Membaca data dari sensor DHT22
+    sensor1.measure()
+    sensor2.measure()
+
+    # Format data dalam JSON
+    message = ujson.dumps({
+        "temp1": sensor1.temperature(),
+        "humidity1": sensor1.humidity(),
+        "temp2": sensor2.temperature(),
+        "humidity2": sensor2.humidity(),
+    })
+
+    # Publish data hanya jika ada perubahan
+    if message != prev_weather:
+        print("Updated!")
+        print("Reporting to MQTT topic {}: {}".format(MQTT_TOPIC_PUB, message))
+        client.publish(MQTT_TOPIC_PUB, message)
+        prev_weather = message
+    else:
+        print("No change")
+
+    # Periksa pesan MQTT yang masuk
+    client.check_msg()
+
+    time.sleep(1)

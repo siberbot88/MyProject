@@ -1,30 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd42a325-9697-4e96-ab54-5c79caad566a" name="Changes" comment="" />
+    <list default="true" id="fd42a325-9697-4e96-ab54-5c79caad566a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MyProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/1.basic learn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/10. Function.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/11. Return Statements.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/12. If statement.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/2.menggambar shape.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/3.data type dan variabel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/4.string learn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/5. numbers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/6. collect Input User.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/7. Basic List.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/8. List Function.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn/9. Tuple.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loop.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/1. Basic Calculator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/2. Games Mad Libs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/script_wokwiiku" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sic6.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2qxxy3DkXXDRzIV7XEiajWRnVL7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.1. Basic Calculator.executor": "Run",
+    "Python.10. Function.executor": "Run",
+    "Python.11. Return Statements.executor": "Run",
+    "Python.12. If statement.executor": "Run",
+    "Python.2. Games Mad Libs.executor": "Run",
+    "Python.3.data type dan variabel.executor": "Run",
+    "Python.4.string learn.executor": "Run",
+    "Python.5. numbers.executor": "Run",
+    "Python.6. collect Input User.executor": "Run",
+    "Python.7. Basic List.executor": "Run",
+    "Python.8. List Function.executor": "Run",
+    "Python.9. Tuple.executor": "Run",
+    "Python.DrawingShapeLearn2.executor": "Run",
+    "Python.Project.executor": "Run",
+    "Python.basicLearn.executor": "Run",
+    "Python.great_snakes_35381fca29d68d8f3f25c9fa0a9026fb(1).executor": "Run",
+    "Python.loop.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.sic6.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\MyProject\project" />
+      <recent name="C:\Users\HP\MyProject\learn" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
