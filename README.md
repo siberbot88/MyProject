@@ -13,7 +13,7 @@ This repository contains fundamental examples in Python, starting from the `prin
 ## 🛠 How to Use
 1. Clone this repository:
    ```bash
-   git clone https://github.com/username/learn-python.git
+   git clone https://github.com/siberbot88/MyProject.git
    ```
 2. Navigate to the project folder:
    ```bash
